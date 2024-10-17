@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SET 2</title>
+</head>
+<body>
+    <script>
+        
+        function displayOutput(output) {
+            let paragraph = document.createElement('p');
+            paragraph.textContent = output;
+            document.body.appendChild(paragraph);
+        }
+       // Question 3: Reverse Array Function (Additional question)
+        function reverseArray(arr) {
+            let start = 0;
+            let end = arr.length - 1;
+            while (start < end) {
+                [arr[start], arr[end]] = [arr[end], arr[start]];
+                start++;
+                end--;
+            }
+            return arr;
+        }
+
+        let numbers3 = [1, 2, 3, 4, 5];
+        displayOutput("Original array for reverse: " + numbers3);
+        reverseArray(numbers3);
+        displayOutput("Reversed array: " + numbers3);
+
+        // Question 4: Remove Duplicates Function (Additional question)
+        function removeDuplicates(arr) {
+            if (arr.length === 0) return 0;
+            let uniqueIndex = 0;
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] !== arr[uniqueIndex]) {
+                    uniqueIndex++;
+                    arr[uniqueIndex] = arr[i];
+                }
+            }
+            return uniqueIndex + 1;
+        }
+
+        let numbers4 = [1, 1, 2, 2, 3, 4, 4, 5];
+        displayOutput("Original array with duplicates: " + numbers4);
+        let newLength = removeDuplicates(numbers4);
+        displayOutput("New length after removing duplicates: " + newLength);
+        displayOutput("Array after removing duplicates: " + numbers4.slice(0, newLength));
+
+        </script>
+
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SET 1</title>
+</head>
+<body>
+
+    <script>
+        
+        function displayOutput(output) {
+            let paragraph = document.createElement('p');
+            paragraph.textContent = output;
+            document.body.appendChild(paragraph);
+        }
+        
+        // Question 1: Find Maximum Element
+        function findMax(arr) {
+            return Math.max(...arr);
+        }
+
+        let numbers2 = [5, 3, 9, 1, 12, 8];
+        displayOutput("Array to find maximum element: " + numbers2);
+        let maxElement = findMax(numbers2);
+        displayOutput("The maximum element is: " + maxElement);
+// ---------------------------------------------------------------------------------------------------
+
+// Question 2: Two Sum
+        function twoSum(nums, target) {
+            let map = new Map();
+
+            for (let i = 0; i < nums.length; i++) {
+                let complement = target - nums[i];
+
+                if (map.has(complement)) {
+                    return [map.get(complement), i];
+                }
+
+                map.set(nums[i], i);
+            }
+
+            return [];
+        }
+
+        let arr = [2, 7, 11, 15];
+        let target = 9;
+        let result = twoSum(arr, target);  // Use 'arr' instead of 'numbers'
+        document.write("Indices of the two numbers are:", result);
+
+
+        
+
+    </script>
+</body>
+</html>
+
+
